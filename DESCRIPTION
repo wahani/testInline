@@ -1,0 +1,11 @@
+Package: testInline
+Type: Package
+Title: Write tests in source.
+Version: 0.0.1
+Date: 2015-04-30
+Author: Sebastian Warnholz
+Maintainer: Sebastian Warnholz <wahani@mail.com>
+Description: Not yet to be used!
+License: GPL-3 | License
+Imports: devtools
+Suggests: testthat
