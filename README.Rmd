@@ -1,0 +1,12 @@
+# Write unit tests in source files with `testInline`
+```{r, results='asis', echo=FALSE}
+cat(gsub("\\n   ", "", packageDescription("testInline", fields = "Description")))
+```
+
+## Installation
+
+```{r, eval=FALSE}
+library(devtools)
+install_github("wahani/testInline")
+```
+

@@ -4,18 +4,25 @@
 \alias{testInline}
 \title{Write tests in your source}
 \usage{
-testInline(expr, file, dir = "testthat", eval = interactive())
+testInline(label, expr, file = paste0("test-", label, ".R"),
+  dir = getOption("testInline.directory", "tests/testthat"),
+  eval = interactive(), testFun = getOption("testInline.testFun", function()
+  devtools::test(filter = label)))
 }
 \arguments{
+\item{label}{label for tests. Used only as default in other arguments}
+
 \item{expr}{test code}
 
 \item{file}{character with name of file in which expr will be stored}
 
-\item{dir}{directory where you want your tests. Allways as sub directory of tests in your package root.}
+\item{dir}{directory where you want your tests}
 
-\item{eval}{if you want to evaluate your testcode. This will call `devtools::test`}
+\item{eval}{if you want to evaluate your testcode right away}
+
+\item{testFun}{how you test code is evaluated. Only relevant if called interactively}
 }
 \description{
-This functions can be used in package development to keep your unit tests where your function definitions are.
+This functions can be used in package development to keep your unit tests where your function definitions are. The code in \code{expr} will be saved into a R file in the test directory. And can then be called by your testing framework. Files will be created and replaced on the fly.
 }
 
